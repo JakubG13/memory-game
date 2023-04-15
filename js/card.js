@@ -8,11 +8,16 @@ class Card {
     let shuffledNumbers = numbers.sort((a, b) => 0.5 - Math.random());
     for (let i = 0; i < 10; i++) {
       let card = document.createElement("div");
+      let fakeCard = document.createElement("div");
       card.classList.add("memory__card");
+      fakeCard.classList.add("memory__fakeCard");
       let name = `memory__card${shuffledNumbers[i]}`;
+      let fakeName = `memory__fakeCard${shuffledNumbers[i]}`;
+      fakeCard.classList.add(fakeName);
       card.classList.add(name);
       card.textContent = shuffledNumbers[i];
-      document.querySelector(".memory").appendChild(card);
+      fakeCard.appendChild(card);
+      document.querySelector(".memory").appendChild(fakeCard);
     }
   }
 }
