@@ -6,6 +6,8 @@ let card1 = "";
 let card2 = "";
 let flag = true;
 let moves = 0;
+let win = 0;
+
 cards.forEach((card) => {
   card.addEventListener("click", () => {
     if (number === 0) {
@@ -36,6 +38,13 @@ const play = () => {
       card1.style.backgroundColor = "limegreen";
       card2.style.opacity = 1;
       card2.style.backgroundColor = "limegreen";
+      win++;
+      if (win === 10) {
+        document.querySelector(
+          ".endScreen__msg"
+        ).textContent = `You win in ${moves} moves!`;
+        document.querySelector(".endScreen").style.display = "flex";
+      }
     } else {
       card1.style.opacity = 0;
       card2.style.opacity = 0;
@@ -48,3 +57,9 @@ const play = () => {
     flag = true;
   }, 2000);
 };
+
+document
+  .querySelector(".endScreen__play-again")
+  .addEventListener("click", () => {
+    location.reload();
+  });
