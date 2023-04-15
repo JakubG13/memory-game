@@ -15,7 +15,7 @@ cards.forEach((card) => {
       card2 = card;
     }
 
-    if (number < 2) {
+    if (number < 2 && card1 != card2) {
       card.style.opacity = 1;
       number++;
     }
@@ -28,14 +28,14 @@ cards.forEach((card) => {
 const play = () => {
   flag = false;
   setTimeout(() => {
-    if (cardTxt1 !== cardTxt2) {
-      card1.style.opacity = 0;
-      card2.style.opacity = 0;
-    } else if (cardTxt1 === cardTxt2) {
+    if (cardTxt1 === cardTxt2 && card1 != card2) {
       card1.style.opacity = 1;
       card1.style.backgroundColor = "limegreen";
       card2.style.opacity = 1;
       card2.style.backgroundColor = "limegreen";
+    } else {
+      card1.style.opacity = 0;
+      card2.style.opacity = 0;
     }
     number = 0;
     cardTxt1 = "";
