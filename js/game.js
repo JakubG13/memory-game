@@ -5,6 +5,7 @@ let cardTxt2 = "";
 let card1 = "";
 let card2 = "";
 let flag = true;
+let moves = 0;
 cards.forEach((card) => {
   card.addEventListener("click", () => {
     if (number === 0) {
@@ -20,6 +21,8 @@ cards.forEach((card) => {
       number++;
     }
     if (number === 2 && flag === true) {
+      moves++;
+      document.querySelector(".moves__score").textContent = moves;
       play();
     }
   });

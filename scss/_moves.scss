@@ -1,0 +1,19 @@
+.moves {
+  color: rgb(208, 255, 0);
+  font-size: 3.5rem;
+  position: fixed;
+  width: 5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: calc(50% - 5rem / 2);
+  top: 1%;
+  z-index: 2;
+  text-transform: uppercase;
+  p {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
