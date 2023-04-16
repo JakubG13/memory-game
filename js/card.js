@@ -1,8 +1,7 @@
+let cardsArr = [];
+
 class Card {
-  constructor() {
-    // const memory = document.querySelector(".memory");
-  }
-  // metody
+  constructor() {}
   createCards() {
     let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
     let shuffledNumbers = numbers.sort((a, b) => 0.5 - Math.random());
@@ -17,11 +16,17 @@ class Card {
       card.classList.add(name);
       card.textContent = shuffledNumbers[i];
       fakeCard.appendChild(card);
-      document.querySelector(".memory").appendChild(fakeCard);
+      cardsArr.push(fakeCard);
     }
   }
 }
-
-let card = new Card();
-card.createCards();
-card.createCards();
+const start = () => {
+  let card = new Card();
+  card.createCards();
+  card.createCards();
+  shuffledCards = cardsArr.sort((a, b) => 0.5 - Math.random());
+  shuffledCards.forEach((card) => {
+    document.querySelector(".memory").appendChild(card);
+  });
+};
+start();
